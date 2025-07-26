@@ -11,16 +11,34 @@ A comprehensive implementation of OpenAI's Whisper speech recognition model with
 - **Translation Support**: Translate audio to English
 - **Word-level Timestamps**: Precise timing for each word
 - **Batch Processing**: Process multiple audio files at once
+- **Complete Documentation**: English and French documentation
+- **Installation Scripts**: Automated setup for easy installation
 
 ## 🚀 Quick Start
 
 ### Installation
 
-1. **Clone or download the project files**
+#### Option 1: Automated Installation (Recommended)
+```bash
+# English installation
+./install.sh
+
+# French installation
+./install_fr.sh
+```
+
+#### Option 2: Manual Installation
+1. **Clone the repository**:
+   ```bash
+   git clone <your-repo-url>
+   cd whisper_project
+   ```
+
 2. **Install dependencies**:
    ```bash
    pip install -r requirements.txt
    ```
+
 3. **Install FFmpeg** (required for audio processing):
    - **macOS**: `brew install ffmpeg`
    - **Ubuntu/Debian**: `sudo apt install ffmpeg`
@@ -61,22 +79,27 @@ python whisper_basic.py audio_file.wav --model large --output srt
 
 # Advanced features
 python whisper_advanced.py audio_file.wav --model medium --task translate --info
+
+# Run examples
+python example_usage.py
 ```
 
-## 📁 File Structure
+## 📁 Project Structure
 
 ```
 whisper_project/
-├── requirements.txt          # Python dependencies
-├── whisper_basic.py         # Basic command-line interface
-├── whisper_advanced.py      # Advanced features implementation
-├── whisper_web_app.py       # Streamlit web application (modern French UI)
-├── whisper_gradio_app.py    # Gradio web application (modern French UI)
-├── example_usage.py         # Usage examples and demonstrations
-├── install.sh               # Automated installation script
-├── install_fr.sh            # French installation script
-├── README.md                # English documentation
-└── README_FR.md             # French documentation
+├── 📄 README.md                # English documentation
+├── 📄 README_FR.md             # French documentation
+├── 📄 requirements.txt         # Python dependencies
+├── 📄 LICENSE                  # MIT License
+├── 📄 .gitignore              # Git ignore rules
+├── 🐍 whisper_basic.py        # Basic command-line interface
+├── 🐍 whisper_advanced.py     # Advanced features implementation
+├── 🐍 whisper_web_app.py      # Streamlit web application (modern French UI)
+├── 🐍 whisper_gradio_app.py   # Gradio web application (modern French UI)
+├── 🐍 example_usage.py        # Usage examples and demonstrations
+├── 🔧 install.sh              # Automated installation script (English)
+└── 🔧 install_fr.sh           # Automated installation script (French)
 ```
 
 ## 🖥️ Web Interface Highlights
@@ -87,6 +110,16 @@ whisper_project/
 - **All options in French**: For a seamless user experience
 - **Download results**: TXT, SRT, JSON
 - **Responsive design**: Works on desktop and mobile
+
+## 🎛️ Model Options
+
+| Model | Size | Speed | Accuracy | Use Case |
+|-------|------|-------|----------|----------|
+| tiny  | 39 MB | Fastest | Lower | Quick tests, limited resources |
+| base  | 74 MB | Fast | Good | General purpose |
+| small | 244 MB | Medium | Better | Better accuracy needed |
+| medium| 769 MB | Slow | High | High accuracy required |
+| large | 1550 MB | Slowest | Best | Best accuracy, professional use |
 
 ## 🌍 Supported Languages
 
@@ -103,9 +136,92 @@ Whisper supports 99+ languages including:
 - Chinese (zh)
 - And many more...
 
+## 📊 Output Formats
+
+### Text (TXT)
+Simple text output of the transcription.
+
+### SRT (SubRip)
+Subtitle format with timestamps for video editing.
+
+### VTT (WebVTT)
+Web video text tracks format for web applications.
+
+### JSON
+Complete transcription data with metadata and timestamps.
+
+## 🔧 Advanced Configuration
+
+### Command Line Options
+
+**Basic Script**:
+- `--model`: Model size (tiny, base, small, medium, large)
+- `--output`: Output format (txt, srt, vtt)
+
+**Advanced Script**:
+- `--model`: Model size
+- `--device`: Device (cpu, cuda, mps)
+- `--task`: Task type (transcribe, translate)
+- `--language`: Language code
+- `--info`: Show audio file information
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+1. **FFmpeg not found**:
+   ```bash
+   # Install FFmpeg
+   brew install ffmpeg  # macOS
+   sudo apt install ffmpeg  # Ubuntu
+   ```
+
+2. **CUDA out of memory**:
+   - Use a smaller model (tiny, base)
+   - Use CPU instead of GPU
+   - Process shorter audio files
+
+3. **Slow transcription**:
+   - Use smaller models for faster processing
+   - Use GPU acceleration if available
+   - Consider batch processing for multiple files
+
+4. **Poor accuracy**:
+   - Use larger models (medium, large)
+   - Provide initial prompts for context
+   - Ensure good audio quality
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
 ## 📝 License
 
-This project uses OpenAI's Whisper model. Please refer to OpenAI's license terms.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+**Note**: This project uses OpenAI's Whisper model. Please refer to OpenAI's license terms for the Whisper model itself.
+
+## 📚 Additional Resources
+
+- [OpenAI Whisper Paper](https://arxiv.org/abs/2212.04356)
+- [Whisper GitHub Repository](https://github.com/openai/whisper)
+- [FFmpeg Documentation](https://ffmpeg.org/documentation.html)
+- [Streamlit Documentation](https://docs.streamlit.io/)
+- [Gradio Documentation](https://gradio.app/docs/)
+
+## 🆘 Support
+
+If you encounter any issues:
+
+1. Check the troubleshooting section above
+2. Ensure all dependencies are installed
+3. Verify FFmpeg is properly installed
+4. Check audio file format compatibility
+5. Open an issue on GitHub with detailed information
 
 ---
 
