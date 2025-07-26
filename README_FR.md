@@ -111,7 +111,7 @@ whisper_project/
 ## 🎛️ Options de Modèles
 
 | Modèle | Taille | Vitesse | Précision | Cas d'Usage |
-|--------|--------|---------|-----------|-------------|
+|--------|--------|--------------|---------------|-------------|
 | tiny   | 39 MB  | Plus rapide | Plus faible | Tests rapides, ressources limitées |
 | base   | 74 MB  | Rapide | Bonne | Usage général |
 | small  | 244 MB | Moyenne | Meilleure | Précision améliorée nécessaire |
