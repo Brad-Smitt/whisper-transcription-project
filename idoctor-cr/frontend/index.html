@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>iDoctor-CR (MVP)</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>iDoctor-CR — Préparation de comptes rendus</h1>
+
+    <section class="card">
+      <h2>Nouveau rendez-vous</h2>
+      <form id="create-form">
+        <div class="row">
+          <label>Patient</label>
+          <input type="text" name="patient_name" placeholder="Nom du patient" required />
+        </div>
+        <div class="row">
+          <label>Identifiant patient</label>
+          <input type="text" name="patient_identifier" placeholder="(optionnel)" />
+        </div>
+        <div class="row">
+          <label>Médecin</label>
+          <input type="text" name="doctor_name" placeholder="Nom du médecin" required />
+        </div>
+        <div class="row">
+          <label>Date/heure</label>
+          <input type="datetime-local" name="scheduled_at" required />
+        </div>
+        <div class="row">
+          <label>Notes</label>
+          <textarea name="notes" placeholder="Notes..." rows="2"></textarea>
+        </div>
+        <button type="submit">Créer</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Rendez-vous</h2>
+      <div id="schedules"></div>
+    </section>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
